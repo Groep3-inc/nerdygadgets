@@ -30,13 +30,13 @@ $databaseConnection = connectToDatabase();
         <div class="col-8" id="CategoriesBar">
             <ul id="ul-class">
                 <?php
-                $HeaderStockGroups = getHeaderStockGroups($databaseConnection);
+                $headerStockGroups = getHeaderStockGroups($databaseConnection);
 
-                foreach ($HeaderStockGroups as $HeaderStockGroup) {
+                foreach ($headerStockGroups as $headerStockGroup) {
                     ?>
                     <li>
-                        <a href="browse.php?category_id=<?php print $HeaderStockGroup['StockGroupID']; ?>"
-                           class="HrefDecoration"><?php print $HeaderStockGroup['StockGroupName']; ?></a>
+                        <a href="browse.php?category_id=<?php print $headerStockGroup['StockGroupID']; ?>"
+                           class="HrefDecoration"><?php print $headerStockGroup['StockGroupName']; ?></a>
                     </li>
                     <?php
                 }
