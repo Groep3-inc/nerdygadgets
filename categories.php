@@ -2,21 +2,21 @@
 <?php
 
 include __DIR__ . "/header.php";
-$StockGroups = getStockGroups($databaseConnection);
+$stockGroups = getStockGroups($databaseConnection);
 
 ?>
 <div id="Wrap">
-    <?php if (isset($StockGroups)) {
+    <?php if (isset($stockGroups)) {
         $i = 0;
-        foreach ($StockGroups as $StockGroup) {
+        foreach ($stockGroups as $stockGroup) {
             if ($i < 6) {
                 ?>
                 <a href="<?php print "browse.php?category_id=";
-                print $StockGroup["StockGroupID"]; ?>">
+                print $stockGroup["StockGroupID"]; ?>">
                     <div id="StockGroup<?php print $i + 1; ?>"
-                         style="background-image: url('Public/StockGroupIMG/<?php print $StockGroup["ImagePath"]; ?>')"
-                         class="StockGroups">
-                        <h1><?php print $StockGroup["StockGroupName"]; ?></h1>
+                        style="background-image: url('Public/StockGroupIMG/<?php print $stockGroup["ImagePath"]; ?>')"
+                        class="StockGroups">
+                        <h1><?php print $stockGroup["StockGroupName"]; ?></h1>
                     </div>
                 </a>
                 <?php
